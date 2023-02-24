@@ -1,29 +1,34 @@
 /*
-// TODO: Include packages needed for this application
+// TODO: Include packages needed for this application - DONE
 const inquirer = require('inquirer');
 const fs = require('fs'); 
 
-// TODO: Create an array of questions for user input
+// TODO: Create an array of questions for user input - done
 const questions = [];
 
-// TODO: Create a function to write README file
+// TODO: Create a function to write README file -DONE
 function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
+// TODO: Create a function to initialize app - ?
 function init() {}
 
-// Function call to initialize app
+// Function call to initialize app = ?
 init();
 */
 
+/*** Starter Code ABOVE &&& Personal Code BELOW **************************/
+
+// Includes packages needed for this application 
 const inquirer = require('inquirer');
 const fs = require('fs');
 const genMarkdown = require('./utils/generateMarkdown.js')
+//C:\..\bootcamp\homework\README Generator\potential-enigma\Develop\utils\generateMarkdown.js
 
-//C:\Users\HP\Documents\bootcamp\homework\README Generator\potential-enigma\Develop\utils\generateMarkdown.js
 
-// Prompt the user for project information for REadme file 
+// Prompt the user for project information for REadme file using inquirer
 inquirer.prompt([
+
+   // An array of questions for user input 
   {
     type: 'input',
     name: 'title',
@@ -63,9 +68,15 @@ inquirer.prompt([
   {
     type: 'input',
     name: 'questions',
-    message: 'Provide instructions for how to ask questions or report issues for your project:',
+    message: 'Provide your Github username. This is for users to ask questions or report issues regarding your project:',
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'Provide your E-Mail. This is for users to ask questions or report issues regarding your project:',
   },
 ]).then((answers) => {
+
   // Constructs an object with the Collected information from PROMPT
   const readmeData = {
     title: answers.title,
@@ -76,7 +87,8 @@ inquirer.prompt([
     contributing: answers.contributing,
     tests: answers.tests,
     questions: answers.questions,
-  };
+    email: answers.email,
+};
 
   // Generate the Readme file from the collected information from the PROPMT 
   const readmeString = genMarkdown.generateMarkdown(readmeData);
@@ -86,3 +98,5 @@ inquirer.prompt([
     err ? console.error(err) : console.log('Readme file created successfully.')
   );
 });
+
+// Function call to initialize app = ?

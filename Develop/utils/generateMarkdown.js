@@ -1,23 +1,27 @@
 /*
-// TODO: Create a function that returns a license badge based on which license is passed in
+// TODO: Create a function that returns a license badge based on which license is passed in - DONE
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {}
 
-// TODO: Create a function that returns the license link
+// TODO: Create a function that returns the license link - done, added to badge as a button
 // If there is no license, return an empty string
 function renderLicenseLink(license) {}
 
-// TODO: Create a function that returns the license section of README
+// TODO: Create a function that returns the license section of README - ?? 
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
-// TODO: Create a function to generate markdown for README
+// TODO: Create a function to generate markdown for README - DOne 
 function generateMarkdown(data) {
   return `# ${data.title}
 
 `;
 }
 */
+
+/*** Starter Code ABOVE &&& Personal Code BELOW **************************/
+
+
 
 function renderLicenseBadge(license) {
   if (!license) {
@@ -53,13 +57,14 @@ function generateMarkdown(data) {
   const licenseBadge = renderLicenseBadge(data.license);
 
   return `
-# ${data.title}
+# ${data.title} © 
 
 ${licenseBadge}
 
 ## Description
 
 ${data.description}
+
 
 ## Table of Contents
 
@@ -70,30 +75,41 @@ ${data.description}
 - [Tests](#tests)
 - [Questions](#questions)
 
+
 ## Installation
 
 ${data.installation}
+
 
 ## Usage
 
 ${data.usage}
 
+
 ## License
 
-This project is licensed under the ${data.license} license.  
 ${licenseBadge}
+
+${data.title} © is licensed under the ${data.license} license.  
+
+For more information regarding the ${data.title}'s license, please visit: 
+https://opensource.org/licenses/${data.license}
+
 
 ## Contributing
 
 ${data.contributing}
 
+
 ## Tests
 
 ${data.tests}
 
+
 ## Questions
 
-${data.questions}
+If you'd like to ask questions or report issues about the ${data.title} project. 
+Please reach out to https://github.com/${data.questions}. Or email us directly at ${data.email}.
   `;
 }
 
